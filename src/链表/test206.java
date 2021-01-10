@@ -4,25 +4,14 @@ public class test206 {
 }
 class Solution206 {
     public ListNode reverseList(ListNode head) {
-        if(head==null){
-            return null;
+        if (head == null || head.next == null) {
+            return head;
         }
         ListNode next = head.next;
-        ListNode pre = head;
-        pre.next = null;
-
-        return getAns(next,pre);
-
+        ListNode newNode = reverseList(next);
+        next.next = head;
+        head.next = null;
+        return newNode;
     }
 
-    public ListNode getAns(ListNode next, ListNode pre) {
-        if (next == null) {
-            return pre;
-        }
-        ListNode temp = next.next;
-        next.next = pre;
-        pre = next;
-        next = temp;
-        return getAns(next, pre);
-    }
 }

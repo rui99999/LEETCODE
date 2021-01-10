@@ -12,7 +12,7 @@ public class test21 {
         ListNode l23 = new ListNode(3);
         l21.next = l22;
         l22.next = l23;
-        ListNode ans = Solution21.mergeTwoLists(l11, l21);
+        ListNode ans = solutionbc.mergeTwoLists(l11, l21);
         while (ans != null) {
             System.out.println(ans.val);
             ans = ans.next;
@@ -62,5 +62,22 @@ class Solution21 {
             per = per.next;
         }
         return ans;
+    }
+}
+class solutionbc {
+    public static ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        if (l1 == null) {
+            return l2;
+        }
+        if (l2 == null) {
+            return l1;
+        }
+        if (l1.val < l2.val) {
+            l1.next = mergeTwoLists(l1.next, l2);
+            return l1;
+        } else {
+            l2.next = mergeTwoLists(l1, l2.next);
+            return l2;
+        }
     }
 }

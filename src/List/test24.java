@@ -1,4 +1,4 @@
-package 链表;
+package List;
 
 public class test24 {
     public static void main(String[] args) {

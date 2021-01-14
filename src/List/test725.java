@@ -1,8 +1,6 @@
-package 链表;
+package List;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 public class test725 {
     public static void main(String[] args) {

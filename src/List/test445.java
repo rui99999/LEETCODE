@@ -1,4 +1,4 @@
-package 链表;
+package List;
 
 import java.util.Deque;
 import java.util.LinkedList;

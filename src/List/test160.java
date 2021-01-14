@@ -1,6 +1,4 @@
-package 链表;
-
-import java.util.List;
+package List;
 
 public class test160 {
 }

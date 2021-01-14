@@ -5,12 +5,15 @@ public class test328 {
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
         ListNode l3 = new ListNode(3);
-//        ListNode l4 = new ListNode(4);
+        ListNode l4 = new ListNode(4);
+        ListNode l5 = new ListNode(5);
+
         l1.next = l2;
         l2.next = l3;
-        l3.next = null;
-//        l4.next = null;
-        l1 = Solution328.oddEvenList(l1);
+        l3.next = l4;
+        l4.next = l5;
+        l5.next = null;
+        l1 = Solution328_2.oddEvenList(l1);
         while (l1 != null) {
             System.out.println(l1.val);
             l1 = l1.next;
@@ -40,5 +43,24 @@ class Solution328 {
             index = index.next.next;
         }
         return ans;
+    }
+}
+class Solution328_2 {
+    public static ListNode oddEvenList(ListNode head) {
+        if (head == null) {
+            return null;
+        }
+        ListNode odd = head;
+        ListNode oddNow = odd;
+        ListNode even = head.next;
+        ListNode evenNow = even;
+        while (evenNow != null && evenNow.next != null) {
+            oddNow.next = oddNow.next.next;
+            evenNow.next = evenNow.next.next;
+            oddNow = oddNow.next;
+            evenNow = evenNow.next;
+        }
+        oddNow.next = even;
+        return odd;
     }
 }

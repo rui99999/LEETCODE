@@ -11,11 +11,8 @@ class Solution572 {
         if (s == null || t == null) {
             return false;
         }
-
-        return (dfs(s.left, t.left) && dfs(s.right, t.right))||(isSubtree(s.left, t) || isSubtree(s.right, t));
-
+        return dfs(s, t)||(isSubtree(s.left, t) || isSubtree(s.right, t));
     }
-
     public boolean dfs(TreeNode s, TreeNode t) {
         if (s == null && t == null) {
             return true;
